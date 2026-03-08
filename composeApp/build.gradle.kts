@@ -31,6 +31,7 @@ kotlin {
             implementation(libs.androidx.core.splashscreen)
             implementation(libs.hilt.android)
             implementation(libs.hilt.compiler)
+            implementation(libs.ktor.okhttp)
         }
         commonMain.dependencies {
             implementation(libs.compose.runtime)
@@ -41,6 +42,14 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+            implementation(compose.material)
+            implementation(compose.materialIconsExtended)
+            implementation(libs.kamel.image)
+            implementation(libs.ktor.core)
+        }
+
+        iosMain.dependencies {
+            implementation(libs.ktor.darwin)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
