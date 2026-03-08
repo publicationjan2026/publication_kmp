@@ -1,0 +1,19 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Background Circle -->
+
+  <circle cx="100" cy="100" r="90" fill="#E8F5E9"/>
+
+  <!-- Left Page -->
+
+  <path d="M60 60 C60 50 90 50 100 60 V140 C90 130 60 130 60 140 Z" fill="#4CAF50"/>
+
+  <!-- Right Page -->
+
+  <path d="M140 60 C140 50 110 50 100 60 V140 C110 130 140 130 140 140 Z" fill="#66BB6A"/>
+
+  <!-- Center Line -->
+
+  <line x1="100" y1="60" x2="100" y2="140" stroke="#2E7D32" stroke-width="3"/>
+
+</svg>
