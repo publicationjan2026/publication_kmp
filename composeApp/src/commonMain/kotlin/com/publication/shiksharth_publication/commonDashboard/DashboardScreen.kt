@@ -39,6 +39,11 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import com.publication.shared.theme.TextPrimary
 import com.publication.shared.theme.TextSecondary
 import com.publication.shared.theme.robotoFont
+import com.publication.shiksharth_publication.commonDashboard.model.ChapterEntity
+import com.publication.shiksharth_publication.commonDashboard.model.ClassEntity
+import com.publication.shiksharth_publication.commonDashboard.model.SubjectEntity
+import com.publication.shiksharth_publication.commonDashboard.repo.PublicationRepo
+import com.publication.shiksharth_publication.commonDashboard.viewModel.DashboardViewModel
 import com.publication.shiksharth_publication.commonShimmerEffect.modernShimmer
 import com.publication.shiksharth_publication.toCamelCase
 import com.skydoves.landscapist.ImageOptions
@@ -47,10 +52,22 @@ import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import shiksharth_kmp.composeapp.generated.resources.Res
 
-@Composable
-fun DashboardScreen(){
-    val viewModel = remember { DashboardViewModel() }
 
+@Composable
+fun DashboardScreen() {
+    val repo = remember { PublicationRepo() }
+    val viewModel = remember {
+        DashboardViewModel(
+            repo
+        )
+    }
+    LaunchedEffect(Unit) {
+        viewModel.loadData()
+    }
+    DashboardScreenUI(viewModel)
+}
+@Composable
+fun DashboardScreenUI(viewModel: DashboardViewModel) {
     DashboardScreenUI(
         listOfChapter = viewModel.chapterList,
         isDataExist = viewModel.isDataFilled,
@@ -60,10 +77,10 @@ fun DashboardScreen(){
         selectedSubject = viewModel.selectedSubject,
         selectedSubjectName = viewModel.selectedSubjectName,
         onClassClick = { className ->
-          // viewModel.setSelectedClass(className)
+           viewModel.setSelectedClass(className)
         },
         onSubjectClick = { subjectName ->
-          //  viewModel.setSelectedSubject(subjectName)
+           viewModel.setSelectedSubject(subjectName)
 
         },
         onVideoBtnClick = {url->
@@ -88,10 +105,10 @@ fun DashboardScreenUI(
     listOfClasses: StateFlow<List<ClassEntity>>,
     listOfSubjects: StateFlow<List<SubjectEntity>>,
     selectedClass: StateFlow<String>,
-    selectedSubject: StateFlow<Int>,
+    selectedSubject: StateFlow<String>,
     selectedSubjectName: StateFlow<String>,
     onClassClick: (String) -> Unit,
-    onSubjectClick: (Int) -> Unit,
+    onSubjectClick: (String) -> Unit,
     onVideoBtnClick: (String) -> Unit,
     onFlipBookClick: (String) -> Unit,
     onSearchClick: () -> Unit
@@ -179,17 +196,17 @@ fun DashboardScreenUI(
 
                     item {
                         LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                            items(subjects, key = { it.subjectId }) { subject ->
+                            items(subjects, key = { it.subjectName }) { subject ->
                                 SubjectCard(
                                     subject = subject,
-                                    isSelected = selectedSubjectId == subject.subjectId,
+                                    isSelected = selectedSubjectId == subject.subjectName,
                                     onClick = onSubjectClick
                                 )
                             }
                         }
                     }
 
-                    items(chapters, key = { it.chapterId }) { chapter ->
+                    items(chapters, key = { it.chapterName }) { chapter ->
                         ChapterCard(
                             chapter = chapter,
                             onVideoClick = onVideoBtnClick,
@@ -262,11 +279,11 @@ fun ClassChip(
 fun SubjectCard(
     subject: SubjectEntity,
     isSelected: Boolean,
-    onClick: (Int) -> Unit
+    onClick: (String) -> Unit
 ) {
     Surface(
         modifier = Modifier.size(110.dp),
-        onClick = { onClick(subject.subjectId) },
+        onClick = { onClick(subject.subjectName) },
         shape = RoundedCornerShape(20.dp),
         color = if (isSelected) PrimaryLight else CardBackground,
         border = BorderStroke(1.dp, if (isSelected) Primary else BorderColor)
