@@ -44,8 +44,8 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtimeCompose)
             implementation(compose.material)
             implementation(compose.materialIconsExtended)
-            implementation(libs.kamel.image)
             implementation(libs.ktor.core)
+            implementation(libs.landscapist.coil3)
         }
 
         iosMain.dependencies {

@@ -41,8 +41,8 @@ import com.publication.shared.theme.TextSecondary
 import com.publication.shared.theme.robotoFont
 import com.publication.shiksharth_publication.commonShimmerEffect.modernShimmer
 import com.publication.shiksharth_publication.toCamelCase
-import io.kamel.image.KamelImage
-import io.kamel.image.asyncPainterResource
+import com.skydoves.landscapist.ImageOptions
+import com.skydoves.landscapist.coil3.CoilImage
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import shiksharth_kmp.composeapp.generated.resources.Res
@@ -279,18 +279,18 @@ fun SubjectCard(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
-            KamelImage(
-                resource = {
-                    asyncPainterResource(subject.subjectImage)
-                },
-                contentDescription = null,
+            CoilImage(
+                imageModel = { subject.subjectImage },
                 modifier = Modifier.size(36.dp),
-                contentScale = ContentScale.Fit,
-                onLoading = {
+                imageOptions = ImageOptions(
+                    contentScale = ContentScale.Fit,
+                    alignment = Alignment.Center
+                ),
+                loading = {
                     CircularProgressIndicator()
                 },
-                onFailure = {
-                    Text("Image error")
+                failure = {
+                        Text("Image error")
                 }
             )
 
@@ -326,23 +326,20 @@ fun ChapterCard(
         Column(modifier = Modifier.padding(16.dp)) {
 
             Row(verticalAlignment = Alignment.CenterVertically) {
-
-                KamelImage(
-                    resource = {
-                        asyncPainterResource(chapter.imageUrl)
-                    },
-                    contentDescription = null,
+                CoilImage(
+                    imageModel = { chapter.imageUrl },
                     modifier = Modifier
                         .size(48.dp)
                         .clip(RoundedCornerShape(12.dp)),
-                    contentScale = ContentScale.Crop,
-                    onLoading = { progress ->
-                        CircularProgressIndicator(
-                            progress = { progress }
-                        )
+                    imageOptions = ImageOptions(
+                        contentScale = ContentScale.Fit,
+                        alignment = Alignment.Center
+                    ),
+                    loading = {
+                        CircularProgressIndicator()
                     },
-                    onFailure = {
-                        Text("Image failed")
+                    failure = {
+                        Text("Image error")
                     }
                 )
 
@@ -351,7 +348,7 @@ fun ChapterCard(
                 Column(modifier = Modifier.weight(1f)) {
 
                     Text(
-                        text = stringResource(Res.string.chapter_title, chapter.chapterNo),
+                        text = stringResource(Res.string.chapter_title) + " ${chapter.chapterNo}",
                         fontFamily = robotoFont(),
                         fontWeight = FontWeight.SemiBold,
                         fontSize = 16.sp,

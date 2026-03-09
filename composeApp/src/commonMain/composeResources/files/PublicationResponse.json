@@ -1,0 +1,183 @@
+[
+  {
+    "class": "Class 1",
+    "subjects": [
+      {
+        "subject_name": "science",
+        "subject_image": "https://cdn-icons-png.flaticon.com/512/2942/2942132.png",
+        "chapters": [
+          {
+            "chapter_no": "1",
+            "chapter_name": "Living and Non-Living Things",
+            "image_url": "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
+            "video_url": "https://www.youtube.com/watch?v=8idTHuX0c0M",
+            "flipbook_url": "https://ncert.nic.in/textbook/pdf/lebo113.pdf"
+          },
+          {
+            "chapter_no": "2",
+            "chapter_name": "Plants",
+            "image_url": "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
+            "video_url": "https://www.youtube.com/watch?v=8idTHuX0c0M",
+            "flipbook_url": "https://www.aeee.in/wp-content/uploads/2020/08/Sample-pdf.pdf"
+          }
+        ]
+      },
+      {
+        "subject_name": "math",
+        "subject_image": "https://cdn-icons-png.flaticon.com/512/2103/2103633.png",
+        "chapters": [
+          {
+            "chapter_no": "1",
+            "chapter_name": "Numbers",
+            "image_url": "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
+            "video_url": "https://www.youtube.com/watch?v=8idTHuX0c0M",
+            "flipbook_url": "https://www.aeee.in/wp-content/uploads/2020/08/Sample-pdf.pdf"
+          },
+          {
+            "chapter_no": "2",
+            "chapter_name": "Addition",
+            "image_url": "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
+            "video_url": "https://www.youtube.com/watch?v=8idTHuX0c0M",
+            "flipbook_url": "https://www.aeee.in/wp-content/uploads/2020/08/Sample-pdf.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "class": "Class 3",
+    "subjects": [
+      {
+        "subject_name": "science",
+        "subject_image": "https://cdn-icons-png.flaticon.com/512/2942/2942132.png",
+        "chapters": [
+          {
+            "chapter_no": "1",
+            "chapter_name": "Food",
+            "image_url": "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
+            "video_url": "https://www.youtube.com/watch?v=8idTHuX0c0M",
+            "flipbook_url": "https://www.aeee.in/wp-content/uploads/2020/08/Sample-pdf.pdf"
+          },
+          {
+            "chapter_no": "2",
+            "chapter_name": "Shelter",
+            "image_url": "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
+            "video_url": "https://www.youtube.com/watch?v=8idTHuX0c0M",
+            "flipbook_url": "https://www.aeee.in/wp-content/uploads/2020/08/Sample-pdf.pdf"
+          }
+        ]
+      },
+      {
+        "subject_name": "english",
+        "subject_image": "https://cdn-icons-png.flaticon.com/512/2991/2991148.png",
+        "chapters": [
+          {
+            "chapter_no": "1",
+            "chapter_name": "Grammar",
+            "image_url": "hhttps://cdn-icons-png.flaticon.com/512/2232/2232688.png",
+            "video_url": "https://www.youtube.com/watch?v=8idTHuX0c0M",
+            "flipbook_url": "https://www.aeee.in/wp-content/uploads/2020/08/Sample-pdf.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "class": "Class 6",
+    "subjects": [
+      {
+        "subject_name": "science",
+        "subject_image": "https://cdn-icons-png.flaticon.com/512/2942/2942132.png",
+        "chapters": [
+          {
+            "chapter_no": "1",
+            "chapter_name": "Food: Where Does It Come From?",
+            "image_url": "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
+            "video_url": "https://www.youtube.com/watch?v=8idTHuX0c0M",
+            "flipbook_url": "https://www.aeee.in/wp-content/uploads/2020/08/Sample-pdf.pdf"
+          },
+          {
+            "chapter_no": "2",
+            "chapter_name": "Components of Food",
+            "image_url": "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
+            "video_url": "https://www.youtube.com/watch?v=8idTHuX0c0M",
+            "flipbook_url": "https://www.aeee.in/wp-content/uploads/2020/08/Sample-pdf.pdf"
+          },
+          {
+            "chapter_no": "3",
+            "chapter_name": "Fibre to Fabric",
+            "image_url": "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
+            "video_url": "https://www.youtube.com/watch?v=8idTHuX0c0M",
+            "flipbook_url": "https://www.aeee.in/wp-content/uploads/2020/08/Sample-pdf.pdf"
+          },
+          {
+            "chapter_no": "4",
+            "chapter_name": "Food: Where Does It Come From?",
+            "image_url": "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
+            "video_url": "https://www.youtube.com/watch?v=8idTHuX0c0M",
+            "flipbook_url": "https://www.aeee.in/wp-content/uploads/2020/08/Sample-pdf.pdf"
+          },
+          {
+            "chapter_no": "5",
+            "chapter_name": "Components of Food",
+            "image_url": "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
+            "video_url": "https://www.youtube.com/watch?v=8idTHuX0c0M",
+            "flipbook_url": "https://www.aeee.in/wp-content/uploads/2020/08/Sample-pdf.pdf"
+          },
+          {
+            "chapter_no": "6",
+            "chapter_name": "Fibre to Fabric",
+            "image_url": "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
+            "video_url": "https://www.youtube.com/watch?v=8idTHuX0c0M",
+            "flipbook_url": "https://www.aeee.in/wp-content/uploads/2020/08/Sample-pdf.pdf"
+          }
+
+        ]
+      },
+      {
+        "subject_name": "math",
+        "subject_image": "https://cdn-icons-png.flaticon.com/512/2436/2436636.png",
+        "chapters": [
+          {
+            "chapter_no": "1",
+            "chapter_name": "Knowing Our Numbers",
+            "image_url": "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
+            "video_url": "https://www.youtube.com/watch?v=8idTHuX0c0M",
+            "flipbook_url": "https://www.aeee.in/wp-content/uploads/2020/08/Sample-pdf.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "class": "Class 8",
+    "subjects": [
+      {
+        "subject_name": "physics",
+        "subject_image": "https://cdn-icons-png.flaticon.com/512/3079/3079151.png",
+        "chapters": [
+          {
+            "chapter_no": "1",
+            "chapter_name": "Force and Pressure",
+            "image_url": "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
+            "video_url": "https://www.youtube.com/watch?v=8idTHuX0c0M",
+            "flipbook_url": "https://www.aeee.in/wp-content/uploads/2020/08/Sample-pdf.pdf"
+          }
+        ]
+      },
+      {
+        "subject_name": "chemistry",
+        "subject_image": "https://cdn-icons-png.flaticon.com/512/3209/3209265.png",
+        "chapters": [
+          {
+            "chapter_no": "1",
+            "chapter_name": "Materials: Metals and Non-Metals",
+            "image_url": "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
+            "video_url": "https://www.youtube.com/watch?v=8idTHuX0c0M",
+            "flipbook_url": "https://www.aeee.in/wp-content/uploads/2020/08/Sample-pdf.pdf"
+          }
+        ]
+      }
+    ]
+  }
+]

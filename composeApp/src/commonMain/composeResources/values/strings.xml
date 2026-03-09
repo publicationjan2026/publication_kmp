@@ -5,7 +5,7 @@
     <string name="apply">Apply</string>
     <string name="generalError">Oh… Something happened</string>
     <string name="title_smart_learning">Smart Learning</string>
-    <string name="chapter_title">Chapter %s</string>
+    <string name="chapter_title">Chapter</string>
     <string name="watch_title">Watch</string>
     <string name="read_title">Read</string>
     <string name="searching_for">Searching for \"%s\"</string>
