@@ -1,4 +1,4 @@
-package com.publication.shiksharth_publication.commonDashboard
+package com.publication.shiksharth_publication.commonDashboard.ui
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
@@ -36,13 +36,13 @@ import shiksharth_kmp.composeapp.generated.resources.watch_title
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.StateFlow
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.navigation.NavHostController
 import com.publication.shared.theme.TextPrimary
 import com.publication.shared.theme.TextSecondary
 import com.publication.shared.theme.robotoFont
 import com.publication.shiksharth_publication.commonDashboard.model.ChapterEntity
 import com.publication.shiksharth_publication.commonDashboard.model.ClassEntity
 import com.publication.shiksharth_publication.commonDashboard.model.SubjectEntity
-import com.publication.shiksharth_publication.commonDashboard.repo.PublicationRepo
 import com.publication.shiksharth_publication.commonDashboard.viewModel.DashboardViewModel
 import com.publication.shiksharth_publication.commonShimmerEffect.modernShimmer
 import com.publication.shiksharth_publication.toCamelCase
@@ -54,52 +54,8 @@ import shiksharth_kmp.composeapp.generated.resources.Res
 
 
 @Composable
-fun DashboardScreen() {
-    val repo = remember { PublicationRepo() }
-    val viewModel = remember {
-        DashboardViewModel(
-            repo
-        )
-    }
-    LaunchedEffect(Unit) {
-        viewModel.loadData()
-    }
-    DashboardScreenUI(viewModel)
-}
-@Composable
-fun DashboardScreenUI(viewModel: DashboardViewModel) {
-    DashboardScreenUI(
-        listOfChapter = viewModel.chapterList,
-        isDataExist = viewModel.isDataFilled,
-        listOfClasses = viewModel.fetchAllClass,
-        listOfSubjects = viewModel.subjectList,
-        selectedClass = viewModel.selectedClass,
-        selectedSubject = viewModel.selectedSubject,
-        selectedSubjectName = viewModel.selectedSubjectName,
-        onClassClick = { className ->
-           viewModel.setSelectedClass(className)
-        },
-        onSubjectClick = { subjectName ->
-           viewModel.setSelectedSubject(subjectName)
-
-        },
-        onVideoBtnClick = {url->
-          //  navController.navigate(DashboardRoute.YoutubePlayer(url))
-
-        },
-        onFlipBookClick = {flipBookUrl ->
-           // FlipBookActivity.start(activity,0, flipBookUrl)
-        },
-        onSearchClick = {
-          //  navController.navigate(DashboardRoute.DashboardSearchScreen)
-        }
-    )
-
-
-}
-
-@Composable
 fun DashboardScreenUI(
+    viewModel: DashboardViewModel,
     listOfChapter: StateFlow<List<ChapterEntity>>,
     isDataExist: StateFlow<Boolean>,
     listOfClasses: StateFlow<List<ClassEntity>>,
@@ -113,6 +69,9 @@ fun DashboardScreenUI(
     onFlipBookClick: (String) -> Unit,
     onSearchClick: () -> Unit
 ) {
+    LaunchedEffect(Unit) {
+        viewModel.loadData()
+    }
 
     var showShimmer by rememberSaveable { mutableStateOf(true) }
 

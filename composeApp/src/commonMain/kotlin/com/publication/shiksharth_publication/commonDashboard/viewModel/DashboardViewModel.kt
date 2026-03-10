@@ -75,4 +75,11 @@ class DashboardViewModel(
                 ?.chapters
                 ?: emptyList()
     }
+
+    fun fetchAllChapters() {
+        _allChapterList.value = _fetchAllClass.value
+                .flatMap { it.subjects }
+                .flatMap { it.chapters }
+
+    }
 }
