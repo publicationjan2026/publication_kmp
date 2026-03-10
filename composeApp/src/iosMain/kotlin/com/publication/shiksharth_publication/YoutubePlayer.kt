@@ -11,8 +11,6 @@ import platform.Foundation.NSURL
 import platform.WebKit.WKWebView
 import platform.WebKit.*
 import platform.UIKit.*
-import platform.UIKit.UIDevice
-import platform.Foundation.setValue
 
 
 @OptIn(ExperimentalForeignApi::class)
@@ -104,16 +102,36 @@ fun extractYoutubeVideoId(url: String): String? {
     return regex.find(url)?.groupValues?.get(1)
 }
 
+
+
 fun forceLandscape() {
-    UIDevice.currentDevice.setValue(
-        UIInterfaceOrientationLandscapeRight,
-        forKey = "orientation"
+    val windowScene = UIApplication.sharedApplication.connectedScenes
+        .firstOrNull() as? UIWindowScene ?: return
+
+    val preferences = UIWindowSceneGeometryPreferencesIOS(
+        interfaceOrientations = UIInterfaceOrientationMaskLandscape
+    )
+
+    windowScene.requestGeometryUpdateWithPreferences(
+        preferences,
+        errorHandler = { error ->
+            println("Orientation error: $error")
+        }
     )
 }
 
 fun forcePortrait() {
-    UIDevice.currentDevice.setValue(
-        UIInterfaceOrientationPortrait,
-        forKey = "orientation"
+    val windowScene = UIApplication.sharedApplication.connectedScenes
+        .firstOrNull() as? UIWindowScene ?: return
+
+    val preferences = UIWindowSceneGeometryPreferencesIOS(
+        interfaceOrientations = UIInterfaceOrientationMaskPortrait
+    )
+
+    windowScene.requestGeometryUpdateWithPreferences(
+        preferences,
+        errorHandler = { error ->
+            println("Orientation error: $error")
+        }
     )
 }
