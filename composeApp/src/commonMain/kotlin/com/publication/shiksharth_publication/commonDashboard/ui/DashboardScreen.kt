@@ -378,7 +378,7 @@ fun ChapterCard(
                     Icon(
                         painter = painterResource(Res.drawable.ic_flip_book),
                         contentDescription = null,
-                        tint = Color.Unspecified
+                        tint = Color.Black
                     )
                     Spacer(modifier = Modifier.width(5.dp))
 
