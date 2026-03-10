@@ -11,7 +11,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.publication.shiksharth.dashboard.ui.DashboardSearchScreen
 import com.publication.shiksharth_publication.commonDashboard.ui.DashboardScreenUI
-import com.publication.shiksharth_publication.commonDashboard.ui.VideoScreen
+import com.publication.shiksharth_publication.VideoScreen
 import com.publication.shiksharth_publication.commonDashboard.viewModel.DashboardViewModel
 
 @Composable
@@ -50,7 +50,7 @@ fun NavGraphBuilder.mainGraph(
 
             },
             onVideoBtnClick = { url ->
-                //  navController.navigate(DashboardRoute.YoutubePlayer(url))
+                  navController.navigate(DashboardRoute.YoutubePlayer(url))
 
             },
             onFlipBookClick = { flipBookUrl ->

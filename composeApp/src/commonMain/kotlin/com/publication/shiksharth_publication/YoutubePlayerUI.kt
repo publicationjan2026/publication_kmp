@@ -1,4 +1,4 @@
-package com.publication.shiksharth_publication.commonDashboard.ui
+package com.publication.shiksharth_publication
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.slideInVertically
@@ -76,10 +76,10 @@ fun VideoScreen(youtubeUrl: String, onBackPress: () -> Unit) {
                     }
                 }
         ) {
-           /* YoutubePlayer(
-                youtubeUrl = youtubeUrl,
-                modifier = Modifier.fillMaxSize().background(Color.Red)
-            )*/
+            YoutubePlayer(
+                videoId = youtubeUrl,
+                modifier = Modifier.fillMaxSize()
+            )
         }
     }
 
