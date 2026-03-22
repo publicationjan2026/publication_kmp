@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.sqldelight)
@@ -43,6 +43,7 @@ kotlin {
             implementation(libs.androidx.core.splashscreen)
             implementation(libs.ktor.okhttp)
             implementation(libs.sqldelight.android)
+            implementation(libs.youtube.player)
         }
 
         iosMain.dependencies {

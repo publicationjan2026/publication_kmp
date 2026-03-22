@@ -97,6 +97,8 @@ fun DashboardScreenUI(
 
 
     Scaffold(
+        modifier = Modifier.fillMaxSize(),
+        contentWindowInsets = WindowInsets.systemBars,
         topBar = { ModernTopBar(onSearchClick) },
         containerColor = Color.White
     ) { padding ->
